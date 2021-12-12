@@ -1,0 +1,126 @@
+/*? id/# */
+    #clicker{
+        display: flex;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin: auto;
+    }
+    #UB1, #UB2{
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+    #buttonContainer{
+        display: flex;
+        margin: auto;
+    }
+/*? */
+/*todo class/. */
+    /** point */
+        .container{
+            display: flex;
+            margin: auto;
+            width: max-content;
+            padding: 1rem;
+            border-radius: 5px;
+            font-weight: 550;
+            font-size: x-large;
+        }
+        .container div{
+            margin: auto;
+        }
+        .container div p{
+            display: inline;
+        }
+    /** Upgrade */
+        .upgrade{
+            width: max-content;
+            margin: auto;
+        }
+        .upgrade button{
+            width: 130px;
+            padding: 10px;
+        }
+    /** Light & Dark class */
+        /** Dark */
+            .Dark{
+                background-color: black;
+                color: white;
+            }
+            .btnDark{
+                background-color: white;
+                border: 5px solid black;
+            }
+        /** Light */
+            .Light{
+                background-color: white;
+                color: rgb(20, 20, 20);
+            }
+            .btnLight{
+                background-color: rgb(20, 20, 20);
+                border: 5px solid white;
+            }
+        /** Body */
+            .bodyD{
+                background-color: rgb(20, 20, 20);
+            }
+            .bodyL{
+                background-color: white;
+            }
+        /** hide */
+            .hide{
+                display: none;
+            }
+/*todo */
+/** not a specific thing */
+    *{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    button{
+        min-width: 20px;
+        min-height: 20px;
+    }
+/** */
+/*! media queries */
+    @media (max-width: 350px) {
+        #swapper{
+            background: none;
+            border: none;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0px 0px 3px rgb(128, 128, 128);
+        }
+    }
+    @media (min-width: 351px) and (max-width: 700px) {
+        #swapper{
+            background: none;
+            border: none;
+            border-radius: 5px;
+            position: relative;
+            left: 40px;
+            top: 30px;
+            box-shadow: 0px 0px 3px rgb(128, 128, 128);
+        }
+    }
+    @media (min-width: 701px) and (max-width: 1000px) {
+        #swapper{
+            background: none;
+            border: none;
+            border-radius: 5px;
+            position: relative;
+            left: 12%;
+            top: 30px;
+            box-shadow: 0px 0px 3px rgb(128, 128, 128);
+        }
+    }
+    @media (min-width: 1001px){
+        #swapper{
+            background: none;
+            border: none;
+            border-radius: 5px;
+            position: relative;
+            left: 20%;
+            top: 30px;
+            box-shadow: 0px 0px 3px rgb(128, 128, 128);
+        }
+    }
