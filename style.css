@@ -21,6 +21,25 @@
         border-radius: 5px;
         width: 63px;
     }
+    #restart{
+        width: max-content;
+        background-color: orange;
+        border-radius: 6px;
+        padding: 10px;
+    }
+    #restart svg{
+        margin: 0 0 -6px 0;
+    }
+    #win{
+        width: max-content;
+        margin: 3rem auto;
+        font-size:x-large;
+        font-weight: 700;
+    }
+    #win #cool{
+        margin-top: 10px;
+        margin-bottom: -14px;
+    }
 /*? */
 /*todo class/. */
     /** point */
@@ -78,6 +97,11 @@
             .hide{
                 display: none;
             }
+    /**  */
+    .resD{
+        width: max-content;
+        margin: 10rem auto 0;
+    }
 /*todo */
 /** not a specific thing */
     *{

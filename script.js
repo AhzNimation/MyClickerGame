@@ -16,6 +16,9 @@ var PpSUpgradeCostVar = PpSUpgradeCost;
 var PpCUpgradeCostSet = PpCUpgradeCostVar + "";
 var PpSUpgradeCostSet = PpSUpgradeCostVar + "";
 
+var gameC = document.getElementById("game");
+var winScreen = document.getElementById("win");
+
 function pointVarSet() {
     if (point >= 1000000000000000000000000) {
         pointVar = point / 1000000000000000000000000;
@@ -94,7 +97,7 @@ function PpSUVarSet() {
         // Normal Var
     } else if (PpSUpgradeCost >= 1000000000000) {
         PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "") + "T";
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "T";
     } else if (PpSUpgradeCost >= 1000000000) {
         PpSUpgradeCostVar = PpSUpgradeCost / 1000000000;
         PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "B";
@@ -110,30 +113,15 @@ function PpSUVarSet() {
     }
 }
 
-
-// function VarSet (defaultVar, VarDiv, VarSet) {
-//     if (defaultVar >= 1000000000000) {
-//         VarDiv = defaultVar / 1000000000000;
-//         VarSet = (VarDiv + "").substring(0, 5) + "T";
-//     } else if (defaultVar >= 1000000000) {
-//         VarDiv = defaultVar / 1000000000;
-//         VarSet = (VarDiv + "").substring(0, 5) + "B";
-//     } else if (defaultVar >= 1000000) {
-//         VarDiv = defaultVar / 1000000;
-//         VarSet = (VarDiv + "").substring(0, 5) + "M";
-//     } else if (defaultVar >= 1000) {
-//         VarDiv = defaultVar / 1000;
-//         VarSet = (VarDiv + "").substring(0, 5) + "K";
-//     } else {
-//         VarDiv = defaultVar;
-//         VarSet = (VarDiv + "").substring(0, 3);
-//     }
-// }
-// function SetAllVar() {
-//     VarSet(point, pointVar, pointSet);
-//     VarSet(PpCUpgradeCost, PpCUpgradeCostVar, PpCUpgradeCostSet);
-//     VarSet(PpSUpgradeCost, PpSUpgradeCostVar, PpSUpgradeCostSet);
-// }
+function winS() {
+    if (point > 10000000000000000000000000) {
+        gameC.classList.add("hide");
+        winScreen.classList.remove("hide");
+        point = 0;
+        PpCV = 1;
+        ppsv = 0;
+    }
+}
 
 function addPoint() {
     point = point + PpCV;
@@ -145,6 +133,7 @@ function Update() {
     document.getElementById("point").innerHTML = pointSet;
     document.getElementById("PpCU").innerHTML = PpCUpgradeCostSet;
     document.getElementById("PpSU").innerHTML = PpSUpgradeCostSet;
+    setTimeout(winS, 1000);
     setTimeout(pointVarSet, 1000);
     setTimeout(PpCUVarSet, 1000);
     setTimeout(PpSUVarSet, 1000);
@@ -203,7 +192,9 @@ function DLmT() {
 }
 
 function PpCP() {
-    PpCUpgradeCost = PpCUpgradeCost * 10;
+    if (PpCUpgradeCost < 200000000000000000000000) {
+        PpCUpgradeCost = PpCUpgradeCost * 10;
+    }
 }
 function PpCM() {
     if (PpCUpgradeCost > 15) {
@@ -211,12 +202,21 @@ function PpCM() {
     }
 }
 function PpSP() {
-    PpSUpgradeCost = PpSUpgradeCost * 10;
+    if (PpSUpgradeCost < 300000000000000000000000) {
+        PpSUpgradeCost = PpSUpgradeCost * 10;
+    }
 }
 function PpSM() {
     if (PpSUpgradeCost > 15) {
         PpSUpgradeCost = PpSUpgradeCost / 10;
     }
+}
+function restart() {
+    point = 0;
+    PpCV = 1;
+    PpsV = 0;
+    gameC.classList.remove("hide");
+    winScreen.classList.add("hide");
 }
 
 document.getElementById("point").innerHTML = pointSet;
