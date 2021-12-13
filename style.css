@@ -14,6 +14,13 @@
         display: flex;
         margin: auto;
     }
+    #pmtable{
+        margin: 3px auto;
+    }
+    #pmtable button{
+        border-radius: 5px;
+        width: 63px;
+    }
 /*? */
 /*todo class/. */
     /** point */
@@ -44,20 +51,20 @@
     /** Light & Dark class */
         /** Dark */
             .Dark{
-                background-color: black;
+                background-color: rgb(20, 20, 20);
                 color: white;
             }
             .btnDark{
                 background-color: white;
-                border: 5px solid black;
+                border: 5px solid rgb(20, 20, 20);
             }
         /** Light */
             .Light{
                 background-color: white;
-                color: rgb(20, 20, 20);
+                color: rgb(30, 30, 30);
             }
             .btnLight{
-                background-color: rgb(20, 20, 20);
+                background-color: rgb(30, 30, 30);
                 border: 5px solid white;
             }
         /** Body */
@@ -76,14 +83,12 @@
     *{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
-    button{
-        min-width: 20px;
-        min-height: 20px;
-    }
 /** */
 /*! media queries */
     @media (max-width: 350px) {
         #swapper{
+            height: 30px;
+            width: 40px;
             background: none;
             border: none;
             border-radius: 5px;
@@ -93,6 +98,8 @@
     }
     @media (min-width: 351px) and (max-width: 700px) {
         #swapper{
+            height: 30px;
+            width: 40px;
             background: none;
             border: none;
             border-radius: 5px;
@@ -104,6 +111,8 @@
     }
     @media (min-width: 701px) and (max-width: 1000px) {
         #swapper{
+            height: 30px;
+            width: 40px;
             background: none;
             border: none;
             border-radius: 5px;
@@ -115,6 +124,8 @@
     }
     @media (min-width: 1001px){
         #swapper{
+            height: 30px;
+            width: 40px;
             background: none;
             border: none;
             border-radius: 5px;

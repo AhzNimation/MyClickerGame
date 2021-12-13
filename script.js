@@ -1,7 +1,4 @@
 var date = new Date();
-var hours = date.getHours();
-var minutes = date.getMinutes();
-var seconds = date.getSeconds();
 
 var point = 0;
 var PpCV = 1;
@@ -10,24 +7,133 @@ var PpsV = 0;
 var pointVar = point;
 var pointSet = pointVar + "";
 
+var PpCUpgradeCost = 15;
+var PpSUpgradeCost = 20;
+
+var PpCUpgradeCostVar = PpCUpgradeCost;
+var PpSUpgradeCostVar = PpSUpgradeCost;
+
+var PpCUpgradeCostSet = PpCUpgradeCostVar + "";
+var PpSUpgradeCostSet = PpSUpgradeCostVar + "";
+
 function pointVarSet() {
-    if (point >= 1000000000000) {
+    if (point >= 1000000000000000000000000) {
+        pointVar = point / 1000000000000000000000000;
+        pointSet = (pointVar + "") + "Mega";
+    } else if (point >= 1000000000000000000000) {
+        pointVar = point / 1000000000000000000000;
+        pointSet = (pointVar + "").substring(0, 5) + "B-T";
+    } else if (point >= 1000000000000000000) {
+        pointVar = point / 1000000000000000000;
+        pointSet = (pointVar + "").substring(0, 5) + "M-T";
+    } else if (point >= 1000000000000000) {
+        pointVar = point / 1000000000000000;
+        pointSet = (pointVar + "").substring(0, 5) + "K-T";
+        // Normal Var
+    } else if (point >= 1000000000000) {
         pointVar = point / 1000000000000;
-        pointSet = (pointVar+"").substring(0,5) + "T";
+        pointSet = (pointVar + "").substring(0, 5) + "T";
     } else if (point >= 1000000000) {
         pointVar = point / 1000000000;
-        pointSet = (pointVar+"").substring(0,5) + "B";
+        pointSet = (pointVar + "").substring(0, 5) + "B";
     } else if (point >= 1000000) {
         pointVar = point / 1000000;
-        pointSet = (pointVar+"").substring(0,5) + "M";
+        pointSet = (pointVar + "").substring(0, 5) + "M";
     } else if (point >= 1000) {
         pointVar = point / 1000;
-        pointSet = (pointVar+"").substring(0,5) + "K";
+        pointSet = (pointVar + "").substring(0, 5) + "K";
     } else {
         pointVar = point;
-        pointSet = (pointVar+"").substring(0,3);
+        pointSet = (pointVar + "").substring(0, 3);
     }
 }
+function PpCUVarSet() {
+    if (PpCUpgradeCost >= 1000000000000000000000000) {
+        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000000000000000;
+        PpCUpgradeCostSet = (PpCUpgradeCostVar + "") + "Mega";
+    } else if (PpCUpgradeCost >= 1000000000000000000000) {
+        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000000000000;
+        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "B-T";
+    } else if (PpCUpgradeCost >= 1000000000000000000) {
+        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000000000;
+        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "M-T";
+    } else if (PpCUpgradeCost >= 1000000000000000) {
+        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000000;
+        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "K-T";
+        // Normal Var
+    } else if (PpCUpgradeCost >= 1000000000000) {
+        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000;
+        PpCUpgradeCostSet = (PpCUpgradeCostVar + "") + "T";
+    } else if (PpCUpgradeCost >= 1000000000) {
+        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000;
+        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "B";
+    } else if (PpCUpgradeCost >= 1000000) {
+        PpCUpgradeCostVar = PpCUpgradeCost / 1000000;
+        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "M";
+    } else if (PpCUpgradeCost >= 1000) {
+        PpCUpgradeCostVar = PpCUpgradeCost / 1000;
+        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "K";
+    } else {
+        PpCUpgradeCostVar = PpCUpgradeCost;
+        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 3);
+    }
+}
+function PpSUVarSet() {
+    if (PpSUpgradeCost >= 1000000000000000000000000) {
+        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000000000000000;
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "") + "Mega";
+    } else if (PpSUpgradeCost >= 1000000000000000000000) {
+        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000000000000;
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "B-T";
+    } else if (PpSUpgradeCost >= 1000000000000000000) {
+        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000000000;
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "M-T";
+    } else if (PpSUpgradeCost >= 1000000000000000) {
+        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000000;
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "K-T";
+        // Normal Var
+    } else if (PpSUpgradeCost >= 1000000000000) {
+        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000;
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "") + "T";
+    } else if (PpSUpgradeCost >= 1000000000) {
+        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000;
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "B";
+    } else if (PpSUpgradeCost >= 1000000) {
+        PpSUpgradeCostVar = PpSUpgradeCost / 1000000;
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "M";
+    } else if (PpSUpgradeCost >= 1000) {
+        PpSUpgradeCostVar = PpSUpgradeCost / 1000;
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "K";
+    } else {
+        PpSUpgradeCostVar = PpSUpgradeCost;
+        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 3);
+    }
+}
+
+
+// function VarSet (defaultVar, VarDiv, VarSet) {
+//     if (defaultVar >= 1000000000000) {
+//         VarDiv = defaultVar / 1000000000000;
+//         VarSet = (VarDiv + "").substring(0, 5) + "T";
+//     } else if (defaultVar >= 1000000000) {
+//         VarDiv = defaultVar / 1000000000;
+//         VarSet = (VarDiv + "").substring(0, 5) + "B";
+//     } else if (defaultVar >= 1000000) {
+//         VarDiv = defaultVar / 1000000;
+//         VarSet = (VarDiv + "").substring(0, 5) + "M";
+//     } else if (defaultVar >= 1000) {
+//         VarDiv = defaultVar / 1000;
+//         VarSet = (VarDiv + "").substring(0, 5) + "K";
+//     } else {
+//         VarDiv = defaultVar;
+//         VarSet = (VarDiv + "").substring(0, 3);
+//     }
+// }
+// function SetAllVar() {
+//     VarSet(point, pointVar, pointSet);
+//     VarSet(PpCUpgradeCost, PpCUpgradeCostVar, PpCUpgradeCostSet);
+//     VarSet(PpSUpgradeCost, PpSUpgradeCostVar, PpSUpgradeCostSet);
+// }
 
 function addPoint() {
     point = point + PpCV;
@@ -37,19 +143,23 @@ function Update() {
     // Point per Seconds
     point = point + PpsV;
     document.getElementById("point").innerHTML = pointSet;
+    document.getElementById("PpCU").innerHTML = PpCUpgradeCostSet;
+    document.getElementById("PpSU").innerHTML = PpSUpgradeCostSet;
     setTimeout(pointVarSet, 1000);
+    setTimeout(PpCUVarSet, 1000);
+    setTimeout(PpSUVarSet, 1000);
     setTimeout(Update, 1000);
 }
 function addPpC() {
-    if (point >= 15) {
-        PpCV = PpCV + 1;
-        point = point - 15;
+    if (point >= PpCUpgradeCost) {
+        PpCV = PpCV + (PpCUpgradeCost / 15);
+        point = point - PpCUpgradeCost;
     }
 }
 function addPpS() {
-    if (point >= 20) {
-        PpsV = PpsV + 1;
-        point = point - 20;
+    if (point >= PpSUpgradeCost) {
+        PpsV = PpsV + (PpSUpgradeCost / 20);
+        point = point - PpSUpgradeCost;
     }
 }
 
@@ -59,6 +169,10 @@ function DLmT() {
     var UB1 = document.getElementById("UB1");
     var UB2 = document.getElementById("UB2");
     var clicker = document.getElementById("clicker");
+    var PMBtn1 = document.getElementById("PMB1");
+    var PMBtn2 = document.getElementById("PMB2");
+    var PMBtn3 = document.getElementById("PMB3");
+    var PMBtn4 = document.getElementById("PMB4");
     // D&L Toggle
     pointC.classList.toggle("Dark");
     UB1.classList.toggle("Dark");
@@ -68,6 +182,15 @@ function DLmT() {
     UB1.classList.toggle("Light");
     UB2.classList.toggle("Light");
     clicker.classList.toggle("btnLight");
+    // PMBTN
+    PMBtn1.classList.toggle("Dark");
+    PMBtn1.classList.toggle("Light");
+    PMBtn2.classList.toggle("Dark");
+    PMBtn2.classList.toggle("Light");
+    PMBtn3.classList.toggle("Dark");
+    PMBtn3.classList.toggle("Light");
+    PMBtn4.classList.toggle("Dark");
+    PMBtn4.classList.toggle("Light");
     // body
     var body = document.getElementById("back");
     body.classList.toggle("bodyD");
@@ -79,6 +202,21 @@ function DLmT() {
     sun.classList.toggle("hide");
 }
 
+function PpCP() {
+    PpCUpgradeCost = PpCUpgradeCost * 10;
+}
+function PpCM() {
+    if (PpCUpgradeCost > 15) {
+        PpCUpgradeCost = PpCUpgradeCost / 10;
+    }
+}
+function PpSP() {
+    PpSUpgradeCost = PpSUpgradeCost * 10;
+}
+function PpSM() {
+    if (PpSUpgradeCost > 15) {
+        PpSUpgradeCost = PpSUpgradeCost / 10;
+    }
+}
 
-
-document.getElementById("point").innerHTML = point;
+document.getElementById("point").innerHTML = pointSet;

@@ -37,8 +37,18 @@
     <button class="btnDark" id="clicker" onclick="addPoint()"></button>
     <br>
     <div class="upgrade">
-        <button class="Dark" id="UB1" onclick="addPpC()">Point/Click++<br>15 Point</button>
-        <button class="Dark" id="UB2" onclick="addPpS()">Point/Second++<br>20 Point</button>
+        <button class="Dark" id="UB1" onclick="addPpC()">Point/Click++<br><span id="PpCU"></span> Point</button>
+        <button class="Dark" id="UB2" onclick="addPpS()">Point/Second++<br><span id="PpSU"></span> Point</button>
+    </div>
+    <div>
+        <table id="pmtable">
+            <tr>
+                <td><button id="PMB1" onclick="PpCP()" class="Dark">+</button></td>
+                <td><button id="PMB2" onclick="PpCM()" class="Dark">-</button></td>
+                <td><button id="PMB3" onclick="PpSP()" class="Dark">+</button></td>
+                <td><button id="PMB4" onclick="PpSM()" class="Dark">-</button></td>
+            </tr>
+        </table>
     </div>
     <script src="script.js"></script>
 </body>
