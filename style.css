@@ -93,19 +93,54 @@
             .bodyL{
                 background-color: white;
             }
-        /** hide */
-            .hide{
-                display: none;
-            }
+        /** Reedem */
+        .ReedemD span, .ReedemD p, .ReedemD a:visited, .ReedemD a:hover, .ReedemD a{
+            color: white;
+        }
+        .ReedemD input, .ReedemD button{
+            color: rgb(30, 30, 30);            background-color: white;
+        }
+        .ReedemL span, .ReedemL p, .ReedemL a:visited, .ReedemL a:hover, .ReedemL a{
+            color: rgb(30, 30, 30);        }
+        .ReedemL input, .ReedemL button{
+            color: white;
+            background-color: rgb(30, 30, 30);        }
+    /** hide */
+        .hide{
+            display: none;
+        }
     /**  */
     .resD{
         width: max-content;
         margin: 10rem auto 0;
     }
+    .centerD{
+        width: max-content;
+        margin: auto;
+    }
 /*todo */
 /** not a specific thing */
     *{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    input{
+        outline: none;
+        padding: 5px;
+    }
+    footer{
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px 0;
+        position: sticky;
+    }
+    footer a, footer a:visited, footer span{
+        color: rgb(30, 30, 30);    }
+    footer a:hover{
+        color: grey;
+    }
+    footer.fdark a, footer.fdark a:visited, footer.fdark span{
+        color: white;
     }
 /** */
 /*! media queries */

@@ -67,7 +67,26 @@
                 </tr>
             </table>
         </div>
+        <div style="margin: 3.5rem auto; width: max-content;" id="ReedemDiv" class="ReedemL">
+            <span style="font-weight: bold;">Redeem Code : </span>
+            <!--! INPUT REDEEM -->
+            <input id="reedemValue" class="Dark" style="border-radius: 5px; width: 180px;" type="text" maxlength="14">
+            <!--! BUTTON REDEEM -->
+            <div id="btnReedem" style="width: max-content; margin: 1rem auto;">
+                <button onclick="reedem()" class="Dark" style="border-radius: 5px; width: 120px;">REDEEM CODE</button>
+            </div>
+            <div id="hasBeenUsed" class="centerD hide">
+                <p style="color: red; font-size: 10px; font-weight: bold;">The Redeem Code has been used!</p>
+            </div>
+            <div id="codeInvalid" class="centerD hide">
+                <p style="color: red; font-size: 10px; font-weight: bold;">The Redeem Code is Invalid!</p>
+            </div>
+            <p style="margin: 2.5rem auto 0; width: max-content; font-size: 13px;">Get the Redeem Code in <a href=" https://www.youtube.com/channel/UCcxo20E7PJ0CjIOHhVedfGg">Here</a></p>
+        </div>
     </div>
+    <footer id="footer" class="">
+        <span style="font-size: 25px; font-weight: bold;">©</span> <span style="font-size: 15px;"> <span id="year"></span> <a href=" https://www.youtube.com/channel/UCcxo20E7PJ0CjIOHhVedfGg">AhzNimation</a></span>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
