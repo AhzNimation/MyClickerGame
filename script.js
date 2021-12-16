@@ -17,6 +17,9 @@ var PpSUpgradeCostVar = PpSUpgradeCost;
 var PpCUpgradeCostSet = PpCUpgradeCostVar + "";
 var PpSUpgradeCostSet = PpSUpgradeCostVar + "";
 
+const mClick = new Audio();
+mClick.src = "Click.mp3";
+
 var gameC = document.getElementById("game");
 var winScreen = document.getElementById("win");
 
@@ -134,7 +137,8 @@ function winS() {
 function reedem() {
     var hasbeenused = document.getElementById("hasBeenUsed");
     var invalid = document.getElementById("codeInvalid");
-    if (reedemVal == reedemCode1  && rC1Used == false){
+    mClick.play();
+    if (reedemVal == reedemCode1 && rC1Used == false) {
         rC1Used = true;
         PpCV = PpCV * 10;
         PpsV = PpsV * 10;
@@ -151,7 +155,7 @@ function reedem() {
         point = point + 1000000;
         hasbeenused.classList.add("hide");
         invalid.classList.add("hide");
-    } else if ((reedemVal == reedemCode1  && rC1Used == true) || (reedemVal == reedemCode2 && rC2Used == true) || (reedemVal == reedemCode3 && rC3Used == true)){
+    } else if ((reedemVal == reedemCode1 && rC1Used == true) || (reedemVal == reedemCode2 && rC2Used == true) || (reedemVal == reedemCode3 && rC3Used == true)) {
         hasbeenused.classList.remove("hide");
         invalid.classList.add("hide");
     } else {
@@ -161,6 +165,7 @@ function reedem() {
     }
 }
 function addPoint() {
+    mClick.play();
     point = point + PpCV;
     document.getElementById("point").innerHTML = pointSet;
 }
@@ -180,12 +185,14 @@ function Update() {
     setTimeout(Update, 1000);
 }
 function addPpC() {
+    mClick.play();
     if (point >= PpCUpgradeCost) {
         PpCV = PpCV + (PpCUpgradeCost / 15);
         point = point - PpCUpgradeCost;
     }
 }
 function addPpS() {
+    mClick.play();
     if (point >= PpSUpgradeCost) {
         PpsV = PpsV + (PpSUpgradeCost / 20);
         point = point - PpSUpgradeCost;
@@ -193,6 +200,7 @@ function addPpS() {
 }
 // Dark and Light mode
 function DLmT() {
+    mClick.play();
     var pointC = document.getElementById("pointC");
     var UB1 = document.getElementById("UB1");
     var UB2 = document.getElementById("UB2");
@@ -236,26 +244,31 @@ function DLmT() {
 }
 
 function PpCP() {
+    mClick.play();
     if (PpCUpgradeCost < 200000000000000000000000) {
         PpCUpgradeCost = PpCUpgradeCost * 10;
     }
 }
 function PpCM() {
+    mClick.play();
     if (PpCUpgradeCost > 15) {
         PpCUpgradeCost = PpCUpgradeCost / 10;
     }
 }
 function PpSP() {
+    mClick.play();
     if (PpSUpgradeCost < 300000000000000000000000) {
         PpSUpgradeCost = PpSUpgradeCost * 10;
     }
 }
 function PpSM() {
+    mClick.play();
     if (PpSUpgradeCost > 15) {
         PpSUpgradeCost = PpSUpgradeCost / 10;
     }
 }
 function restart() {
+    mClick.play();
     point = 0;
     PpCV = 1;
     PpsV = 0;
