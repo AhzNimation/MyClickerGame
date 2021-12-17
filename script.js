@@ -1,7 +1,7 @@
 var date = new Date();
 var year = date.getFullYear();
 
-var point = 500000;
+var point = 0;
 var PpCV = 1;
 var PpsV = 0;
 
