@@ -1,12 +1,18 @@
 var date = new Date();
 var year = date.getFullYear();
 
-var point = 0;
+var point = 500000;
 var PpCV = 1;
 var PpsV = 0;
 
 var pointVar = point;
 var pointSet = pointVar + "";
+
+var PpCVar = PpCV;
+var PpCSet = PpCVar + "";
+
+var PpSVar = PpsV;
+var PpSSet = PpsV + "";
 
 var PpCUpgradeCost = 15;
 var PpSUpgradeCost = 20;
@@ -32,98 +38,43 @@ var rC1Used = false;
 var rC2Used = false;
 var rC3Used = false;
 
-function pointVarSet() {
-    if (point >= 1000000000000000000000000) {
-        pointVar = point / 1000000000000000000000000;
-        pointSet = (pointVar + "").substring(0, 5) + "Sp";
-    } else if (point >= 1000000000000000000000) {
-        pointVar = point / 1000000000000000000000;
-        pointSet = (pointVar + "").substring(0, 5) + "Sk";
-    } else if (point >= 1000000000000000000) {
-        pointVar = point / 1000000000000000000;
-        pointSet = (pointVar + "").substring(0, 5) + "Kt";
-    } else if (point >= 1000000000000000) {
-        pointVar = point / 1000000000000000;
-        pointSet = (pointVar + "").substring(0, 5) + "Kd";
-        // Normal Var
-    } else if (point >= 1000000000000) {
-        pointVar = point / 1000000000000;
-        pointSet = (pointVar + "").substring(0, 5) + "T";
-    } else if (point >= 1000000000) {
-        pointVar = point / 1000000000;
-        pointSet = (pointVar + "").substring(0, 5) + "B";
-    } else if (point >= 1000000) {
-        pointVar = point / 1000000;
-        pointSet = (pointVar + "").substring(0, 5) + "M";
-    } else if (point >= 1000) {
-        pointVar = point / 1000;
-        pointSet = (pointVar + "").substring(0, 5) + "K";
+function VarSet(param, paramVar, paramSet, lenght) {
+    if (param >= 1000000000000000000000000) {
+        paramVar = param / 1000000000000000000000000;
+        paramSet = (paramVar + "").substring(0, lenght) + "Sp";
+    } else if (param >= 1000000000000000000000) {
+        paramVar = param / 1000000000000000000000;
+        paramSet = (paramVar + "").substring(0, lenght) + "Sk";
+    } else if (param >= 1000000000000000000) {
+        paramVar = param / 1000000000000000000;
+        paramSet = (paramVar + "").substring(0, lenght) + "Kt";
+    } else if (param >= 1000000000000000) {
+        paramVar = param / 1000000000000000;
+        paramSet = (paramVar + "").substring(0, lenght) + "Kd";
+    } else if (param >= 1000000000000) {
+        paramVar = param / 1000000000000;
+        paramSet = (paramVar + "").substring(0, lenght) + "T";
+    } else if (param >= 1000000000) {
+        paramVar = param / 1000000000;
+        paramSet = (paramVar + "").substring(0, lenght) + "B";
+    } else if (param >= 1000000) {
+        paramVar = param / 1000000;
+        paramSet = (paramVar + "").substring(0, lenght) + "M";
+    } else if (param >= 1000) {
+        paramVar = param / 1000;
+        paramSet = (paramVar + "").substring(0, lenght) + "K";
     } else {
-        pointVar = point;
-        pointSet = (pointVar + "").substring(0, 3);
+        paramVar = param;
+        paramSet = (paramVar + "").substring(0, lenght);
     }
+    return paramSet;
 }
-function PpCUVarSet() {
-    if (PpCUpgradeCost >= 1000000000000000000000000) {
-        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000000000000000;
-        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "Sp";
-    } else if (PpCUpgradeCost >= 1000000000000000000000) {
-        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000000000000;
-        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "Sk";
-    } else if (PpCUpgradeCost >= 1000000000000000000) {
-        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000000000;
-        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "Kt";
-    } else if (PpCUpgradeCost >= 1000000000000000) {
-        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000000;
-        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "Kd";
-        // Normal Var
-    } else if (PpCUpgradeCost >= 1000000000000) {
-        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000000;
-        PpCUpgradeCostSet = (PpCUpgradeCostVar + "") + "T";
-    } else if (PpCUpgradeCost >= 1000000000) {
-        PpCUpgradeCostVar = PpCUpgradeCost / 1000000000;
-        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "B";
-    } else if (PpCUpgradeCost >= 1000000) {
-        PpCUpgradeCostVar = PpCUpgradeCost / 1000000;
-        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "M";
-    } else if (PpCUpgradeCost >= 1000) {
-        PpCUpgradeCostVar = PpCUpgradeCost / 1000;
-        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 5) + "K";
-    } else {
-        PpCUpgradeCostVar = PpCUpgradeCost;
-        PpCUpgradeCostSet = (PpCUpgradeCostVar + "").substring(0, 3);
-    }
-}
-function PpSUVarSet() {
-    if (PpSUpgradeCost >= 1000000000000000000000000) {
-        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000000000000000;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "Sp";
-    } else if (PpSUpgradeCost >= 1000000000000000000000) {
-        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000000000000;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "Sk";
-    } else if (PpSUpgradeCost >= 1000000000000000000) {
-        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000000000;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "Kt";
-    } else if (PpSUpgradeCost >= 1000000000000000) {
-        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000000;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "Kd";
-        // Normal Var
-    } else if (PpSUpgradeCost >= 1000000000000) {
-        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000000;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "T";
-    } else if (PpSUpgradeCost >= 1000000000) {
-        PpSUpgradeCostVar = PpSUpgradeCost / 1000000000;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "B";
-    } else if (PpSUpgradeCost >= 1000000) {
-        PpSUpgradeCostVar = PpSUpgradeCost / 1000000;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "M";
-    } else if (PpSUpgradeCost >= 1000) {
-        PpSUpgradeCostVar = PpSUpgradeCost / 1000;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 5) + "K";
-    } else {
-        PpSUpgradeCostVar = PpSUpgradeCost;
-        PpSUpgradeCostSet = (PpSUpgradeCostVar + "").substring(0, 3);
-    }
+function CallVarSet() {
+    pointSet = VarSet(point, pointVar, pointSet, 5);
+    PpCUpgradeCostSet = VarSet(PpCUpgradeCost, PpCUpgradeCostVar, PpCUpgradeCostSet, 5);
+    PpSUpgradeCostSet = VarSet(PpSUpgradeCost, PpSUpgradeCostVar, PpSUpgradeCostSet, 5);
+    PpCSet = VarSet(PpCV, PpCVar, PpCSet, 5);
+    PpSSet = VarSet(PpsV, PpSVar, PpSSet, 3);
 }
 function winS() {
     if (point > 10000000000000000000000000) {
@@ -137,6 +88,7 @@ function winS() {
 function reedem() {
     var hasbeenused = document.getElementById("hasBeenUsed");
     var invalid = document.getElementById("codeInvalid");
+    var playerRich = document.getElementById("Rich");
     mClick.play();
     if (reedemVal == reedemCode1 && rC1Used == false) {
         rC1Used = true;
@@ -145,22 +97,31 @@ function reedem() {
         point = point * 10;
         hasbeenused.classList.add("hide");
         invalid.classList.add("hide");
+        playerRich.classList.add("hide");
     } else if (reedemVal == reedemCode2 && rC2Used == false) {
         rC2Used = true;
         point = point + 20000;
         hasbeenused.classList.add("hide");
         invalid.classList.add("hide");
-    } else if (reedemVal == reedemCode3 && rC3Used == false) {
+        playerRich.classList.add("hide");
+    } else if (reedemVal == reedemCode3 && rC3Used == false && point <= 500000) {
         rC3Used = true;
         point = point + 1000000;
         hasbeenused.classList.add("hide");
         invalid.classList.add("hide");
+        playerRich.classList.add("hide");
+    } else if (reedemVal == reedemCode3 && rC3Used == false && point >= 500001) {
+        hasbeenused.classList.add("hide");
+        invalid.classList.add("hide");
+        playerRich.classList.remove("hide");
     } else if ((reedemVal == reedemCode1 && rC1Used == true) || (reedemVal == reedemCode2 && rC2Used == true) || (reedemVal == reedemCode3 && rC3Used == true)) {
         hasbeenused.classList.remove("hide");
         invalid.classList.add("hide");
+        playerRich.classList.add("hide");
     } else {
         hasbeenused.classList.add("hide");
         invalid.classList.remove("hide");
+        playerRich.classList.add("hide");
         return;
     }
 }
@@ -178,10 +139,10 @@ function Update() {
     document.getElementById("point").innerHTML = pointSet;
     document.getElementById("PpCU").innerHTML = PpCUpgradeCostSet;
     document.getElementById("PpSU").innerHTML = PpSUpgradeCostSet;
+    document.getElementById("PpCVDiv").innerHTML = PpCSet + " " + "/ Click";
+    document.getElementById("PpSVDiv").innerHTML = PpSSet + " " + "/ Second";
+    setTimeout(CallVarSet, 1000);
     setTimeout(winS, 1000);
-    setTimeout(pointVarSet, 1000);
-    setTimeout(PpCUVarSet, 1000);
-    setTimeout(PpSUVarSet, 1000);
     setTimeout(Update, 1000);
 }
 function addPpC() {
@@ -242,7 +203,6 @@ function DLmT() {
     moon.classList.toggle("hide");
     sun.classList.toggle("hide");
 }
-
 function PpCP() {
     mClick.play();
     if (PpCUpgradeCost < 200000000000000000000000) {

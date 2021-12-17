@@ -40,6 +40,21 @@
         margin-top: 10px;
         margin-bottom: -14px;
     }
+    #VarValue{
+        width: max-content;
+        margin: auto;
+    }
+    #VarValue .VarValue{
+        font-size: 13px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        width: 110px;
+        padding: 0px 8px;
+        border: 2px solid grey;
+        border-radius: 5px;
+        display: inline-block;
+    }
 /*? */
 /*todo class/. */
     /** point */
@@ -94,13 +109,13 @@
                 background-color: white;
             }
         /** Reedem */
-        .ReedemD span, .ReedemD p, .ReedemD a:visited, .ReedemD a:hover, .ReedemD a{
+        .ReedemD span, .ReedemD p, .ReedemD label,.ReedemD a:visited, .ReedemD a:hover, .ReedemD a{
             color: white;
         }
         .ReedemD input, .ReedemD button{
             color: rgb(30, 30, 30);            background-color: white;
         }
-        .ReedemL span, .ReedemL p, .ReedemL a:visited, .ReedemL a:hover, .ReedemL a{
+        .ReedemL span, .ReedemL p, .ReedemL label,.ReedemL a:visited, .ReedemL a:hover, .ReedemL a{
             color: rgb(30, 30, 30);        }
         .ReedemL input, .ReedemL button{
             color: white;
@@ -121,7 +136,7 @@
 /*todo */
 /** not a specific thing */
     *{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Verdana, Ubuntu, Geneva, Tahoma, sans-serif;
     }
     input{
         outline: none;
@@ -144,7 +159,7 @@
     }
 /** */
 /*! media queries */
-    @media (max-width: 350px) {
+    @media (max-width: 400px) {
         #swapper{
             height: 30px;
             width: 40px;
@@ -155,7 +170,7 @@
             box-shadow: 0px 0px 3px rgb(128, 128, 128);
         }
     }
-    @media (min-width: 351px) and (max-width: 700px) {
+    @media (min-width: 401px) and (max-width: 700px) {
         #swapper{
             height: 30px;
             width: 40px;
