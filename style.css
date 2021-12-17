@@ -46,7 +46,6 @@
     }
     #VarValue .VarValue{
         font-size: 13px;
-        font-weight: 900;
         text-align: center;
         background-color: black;
         color: white;
@@ -58,7 +57,6 @@
     }
     #VarValue.VVDark .VarValue{
         font-size: 13px;
-        font-weight: 900;
         text-align: center;
         background-color: white;
         color: black;
