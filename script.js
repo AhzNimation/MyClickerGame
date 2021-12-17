@@ -172,6 +172,7 @@ function DLmT() {
     var PMBtn4 = document.getElementById("PMB4");
     var RCD = document.getElementById("ReedemDiv");
     var Footer = document.getElementById("footer");
+    var VarValue = document.getElementById("VarValue");
     // D&L Toggle
     pointC.classList.toggle("Dark");
     UB1.classList.toggle("Dark");
@@ -184,6 +185,7 @@ function DLmT() {
     RCD.classList.toggle("ReedemD");
     RCD.classList.toggle("ReedemL");
     Footer.classList.toggle("fdark");
+    VarValue.classList.toggle("VVDark");
     // PMBTN
     PMBtn1.classList.toggle("Dark");
     PMBtn1.classList.toggle("Light");

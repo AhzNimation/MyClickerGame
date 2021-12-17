@@ -46,9 +46,22 @@
     }
     #VarValue .VarValue{
         font-size: 13px;
+        font-weight: 900;
         text-align: center;
         background-color: black;
         color: white;
+        width: 110px;
+        padding: 0px 8px;
+        border: 2px solid grey;
+        border-radius: 5px;
+        display: inline-block;
+    }
+    #VarValue.VVDark .VarValue{
+        font-size: 13px;
+        font-weight: 900;
+        text-align: center;
+        background-color: white;
+        color: black;
         width: 110px;
         padding: 0px 8px;
         border: 2px solid grey;
