@@ -54,26 +54,35 @@
         <button class="btnDark" id="clicker" onclick="addPoint()"></button>
         <br>
         <div class="upgrade">
-            <button class="Dark" id="UB1" onclick="addPpC()">Point/Click++<br><span id="PpCU"></span> Point</button>
-            <button class="Dark" id="UB2" onclick="addPpS()">Point/Second++<br><span id="PpSU"></span> Point</button>
-        </div>
-        <div>
-            <table id="pmtable">
-                <tr>
-                    <td><button id="PMB1" onclick="PpCP()" class="Dark">+</button></td>
-                    <td><button id="PMB2" onclick="PpCM()" class="Dark">-</button></td>
-                    <td><button id="PMB3" onclick="PpSP()" class="Dark">+</button></td>
-                    <td><button id="PMB4" onclick="PpSM()" class="Dark">-</button></td>
-                </tr>
-            </table>
-        </div>
-        <div id="VarValue" class="">
-            <div class="VarValue" id="PpCVDiv"></div>
-            <div class="VarValue" id="PpSVDiv"></div>
+            <div id="uPpC" class="UpgradeDiv">
+                <button class="Dark" id="UB1" onclick="addPpC()">Point/Click++<br><span id="PpCU"></span> Point</button>
+                <table id="pmtable">
+                    <tr>
+                        <td><button id="PMB1" onclick="PpCP()" class="Dark">+</button></td>
+                        <td><button id="PMB2" onclick="PpCM()" class="Dark">-</button></td>
+                    </tr>
+                </table>
+                <div id="VarValue" class="">
+                    <div class="VarValue" id="PpCVDiv"></div>
+                </div>
+            </div>
+            <!--  -->
+            <div id="uPpS" class="UpgradeDiv">
+                <button class="Dark" id="UB2" onclick="addPpS()">Point/Second++<br><span id="PpSU"></span> Point</button>
+                <table id="pmtable">
+                    <tr>
+                        <td><button id="PMB3" onclick="PpSP()" class="Dark">+</button></td>
+                        <td><button id="PMB4" onclick="PpSM()" class="Dark">-</button></td>
+                    </tr>
+                </table>
+                <div id="VarValue2" class="">
+                    <div class="VarValue" id="PpSVDiv"></div>
+                </div>
+            </div>
         </div>
         <div style="margin: 3.5rem auto; width: max-content;" id="ReedemDiv" class="ReedemL">
             <label style="font-weight: bold;" for="reedemValue">Redeem Code : </label>
-            <input class="Dark" style="border-radius: 5px; width: 180px;" type="text" maxlength="14"  id="reedemValue">
+            <input class="Dark" type="text" maxlength="14"  id="reedemValue">
             <!--! BUTTON REDEEM -->
             <div id="btnReedem" style="width: max-content; margin: 1rem auto;">
                 <button onclick="reedem()" class="Dark" style="border-radius: 5px; width: 120px;">REDEEM CODE</button>

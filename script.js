@@ -31,12 +31,12 @@ var winScreen = document.getElementById("win");
 
 var reedemVal = document.getElementById("reedemValue").value;
 
-var reedemCode1 = "AhzTheBest"
-var reedemCode2 = "20kPoints"
-var reedemCode3 = "IWantToBeRich"
-var rC1Used = false;
-var rC2Used = false;
-var rC3Used = false;
+let reedemCode1 = "AhzTheBest"
+let reedemCode2 = "20kPoints"
+let reedemCode3 = "IWantToBeRich"
+let rC1Used = false;
+let rC2Used = false;
+let rC3Used = false;
 
 function VarSet(param, paramVar, paramSet, lenght) {
     if (param >= 1000000000000000000000000) {
@@ -173,6 +173,7 @@ function DLmT() {
     var RCD = document.getElementById("ReedemDiv");
     var Footer = document.getElementById("footer");
     var VarValue = document.getElementById("VarValue");
+    var VarValue2 = document.getElementById("VarValue2");
     // D&L Toggle
     pointC.classList.toggle("Dark");
     UB1.classList.toggle("Dark");
@@ -186,6 +187,7 @@ function DLmT() {
     RCD.classList.toggle("ReedemL");
     Footer.classList.toggle("fdark");
     VarValue.classList.toggle("VVDark");
+    VarValue2.classList.toggle("VVDark");
     // PMBTN
     PMBtn1.classList.toggle("Dark");
     PMBtn1.classList.toggle("Light");

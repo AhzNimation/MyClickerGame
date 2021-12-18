@@ -44,7 +44,7 @@
         width: max-content;
         margin: auto;
     }
-    #VarValue .VarValue{
+    #VarValue .VarValue, #VarValue2 .VarValue{
         font-size: 13px;
         text-align: center;
         background-color: black;
@@ -55,7 +55,7 @@
         border-radius: 5px;
         display: inline-block;
     }
-    #VarValue.VVDark .VarValue{
+    #VarValue.VVDark .VarValue, #VarValue2.VVDark .VarValue{
         font-size: 13px;
         text-align: center;
         background-color: white;
@@ -170,6 +170,33 @@
     }
 /** */
 /*! media queries */
+    @media (max-width: 500px){
+        .upgrade .UpgradeDiv{
+            display: block;
+            margin: 15px 0;
+        }
+        #ReedemDiv label, #ReedemDiv #reedemValue{
+            display: block;
+            text-align: center;
+            margin: auto;
+        }
+        #ReedemDiv #reedemValue{
+            font-size: medium;
+            border-radius: 5px;
+            width: 70%;
+        }
+    }
+    @media (min-width: 501px){
+        .upgrade .UpgradeDiv{
+            display: inline-block;
+            margin: 10px -2px;
+        } 
+        #ReedemDiv #reedemValue{
+            font-size: medium;
+            border-radius: 5px; 
+            width: 180px;
+        }
+    }
     @media (max-width: 400px) {
         #swapper{
             height: 30px;
